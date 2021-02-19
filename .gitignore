@@ -1,0 +1,6 @@
+PySensemakr/
+.ipynb_checkpoints/
+__pycache__/
+backup/
+mrsensemakr/PySensemakr/
+sim_data.csv
