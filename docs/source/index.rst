@@ -22,6 +22,8 @@ mrsensemakr
 .. autoclass:: MRSensemakr
    :members:
 
+   .. automethod:: __init__
+
 
 Indices and tables
 ==================
