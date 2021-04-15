@@ -11,6 +11,17 @@ Welcome to mrsensemakr's documentation!
    :caption: Contents:
 
 
+mrsensemakr
+===================
+.. automodule:: mrsensemakr
+   :members:
+
+.. automodule:: mrsensemakr.mrsensemakr
+   :members:
+
+.. autoclass:: MRSensemakr
+   :members:
+
 
 Indices and tables
 ==================
