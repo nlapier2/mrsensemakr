@@ -18,7 +18,7 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
 
-  - conda create -f brianhill11/mrsensemakr/environment.yml
+  - conda env create -f brianhill11/mrsensemakr/environment.yml
   - source activate mrsensemakr
 
 script:
