@@ -1,6 +1,10 @@
 # run: conda env create --file environment.yml
 name: mrsensemakr
 
+channels:
+  - anaconda
+  - conda-forge
+
 dependencies:
  - python>=3.8
  - pandas
