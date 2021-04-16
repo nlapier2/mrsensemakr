@@ -9,3 +9,5 @@ dependencies:
  - matplotlib
  - scipy
  - jupyter
+ - sphinx
+ - sphinx-autobuild
