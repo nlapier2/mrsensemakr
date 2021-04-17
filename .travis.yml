@@ -22,7 +22,7 @@ install:
   - source activate mrsensemakr
 
 script:
-  - export PATH="$HOME/virtualenv/python3.8/bin":$PATH
+  - export PATH="$HOME/miniconda/bin":"$HOME/miniconda/envs/mrsensemakr/bin":$PATH
   - make -C docs/ html
   - touch docs/build/html/.nojekyll
 deploy:
