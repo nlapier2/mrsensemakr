@@ -28,7 +28,7 @@ script:
 deploy:
   - provider: pages
     on:
-      branch: master
+      branch: gh-pages
   - verbose: true
   - skip_cleanup: true
   - token: $GITHUB_TOKEN
