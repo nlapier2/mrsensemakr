@@ -27,6 +27,8 @@ script:
   - touch docs/build/html/.nojekyll
 deploy:
   - provider: pages:git
+    on:
+      branch: master
   - verbose: true
   - token: $GITHUB_TOKEN
   - edge: true
