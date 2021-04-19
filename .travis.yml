@@ -27,6 +27,7 @@ script:
   - touch docs/build/html/.nojekyll
 deploy:
   - provider: pages
+  - strategy: git
     on:
       branch: master
   - verbose: true
