@@ -36,3 +36,4 @@ deploy:
   - local_dir: ./docs/build/html/
   - keep_history: true
   - target_branch: master
+  - fqdn: www.brianlhill.info
