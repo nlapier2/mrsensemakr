@@ -28,11 +28,11 @@ script:
 deploy:
   - provider: pages
     on:
-      branch: gh-pages
+      branch: master
   - verbose: true
   - skip_cleanup: true
   - token: $GITHUB_TOKEN
   - edge: true
   - local_dir: ./docs/build/html/
   - keep_history: true
-  - target_branch: gh-pages
+  - target_branch: master
