@@ -15,3 +15,6 @@ dependencies:
  - jupyter
  - sphinx
  - sphinx-autobuild
+ - pip
+ - pip:
+   - Pysensemakr
