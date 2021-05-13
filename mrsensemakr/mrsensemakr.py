@@ -1,8 +1,8 @@
 # import pandas as pd
 import statsmodels.formula.api as smf
 from . import traditional_mr
-from .PySensemakr.sensemakr import ovb_bounds
-from .PySensemakr.sensemakr import sensitivity_stats
+from sensemakr import ovb_bounds
+from sensemakr import sensitivity_stats
 
 
 class MRSensemakr:
