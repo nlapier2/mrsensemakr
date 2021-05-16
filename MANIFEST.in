@@ -1,0 +1,6 @@
+include versioneer.py
+include mrsensemakr/_version.py
+include README.md
+include requirements.txt
+graft mrsensemakr
+recursive-exclude * *.py[co]
