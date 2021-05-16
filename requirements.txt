@@ -1,0 +1,9 @@
+pandas
+numpy
+statsmodels
+matplotlib
+scipy
+jupyter
+sphinx
+sphinx-autobuild
+Pysensemakr
