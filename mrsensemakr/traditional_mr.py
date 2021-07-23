@@ -2,7 +2,7 @@ import math
 import sys
 from scipy.stats import pearsonr, t
 import pandas as pd
-from .PySensemakr.sensemakr import sensitivity_stats
+from sensemakr import sensitivity_stats
 
 
 def ils(fs, rf, instrument):
