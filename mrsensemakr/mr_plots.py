@@ -2,7 +2,7 @@
 
 import sys
 from . import mrsensemakr
-from sensemakr import ovb_plots, sensitivity_stats
+from .PySensemakr.sensemakr import ovb_plots, sensitivity_stats
 
 
 def plot_mr_sensemakr(x, var_type, benchmark_covariates=None, k=1, alpha=0.05, lim_x=None, lim_y=None):
