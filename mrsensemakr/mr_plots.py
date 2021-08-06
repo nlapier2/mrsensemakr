@@ -1,11 +1,13 @@
 # Produce contour plots by calling the equivalent sensemakr function
 
 import sys
+import numpy as np
+from scipy.stats import t
 from . import mrsensemakr
 from .PySensemakr.sensemakr import ovb_plots, sensitivity_stats
 
 
-def plot_mr_sensemakr(x, var_type, benchmark_covariates=None, k=1, alpha=0.05, lim_x=None, lim_y=None):
+def plot_mr_sensemakr(x, var_type, benchmark_covariates=None, k=1, alpha=None, lim_x=None, lim_y=None):
 	"""
 	Creates an omitted variable bias contour plot using the Sensemakr functions, depicting the sensitivity either of
 		the first stage (instrument-exposure) or reduced form (instrument-outcome) regressions.
@@ -26,6 +28,15 @@ def plot_mr_sensemakr(x, var_type, benchmark_covariates=None, k=1, alpha=0.05, l
 		model = x.out['exposure']['model']
 	else:
 		sys.exit("Error: 'var_type' must be 'outcome' or 'exposure'.")
+
+	if alpha is None:
+		alpha = x.out['info']['alpha']
+	if alpha < 0 or alpha > 1:
+		sys.exit('Error: alpha must be between 0 and 1.')
+	dof = model.df_resid
+	t_value = model.tvalues[x.out['info']['instrument']]
+	t_thr = abs(t.ppf(alpha / 2.0, df = dof - 1)) * np.sign(t_value)
+
 	model_data = sensitivity_stats.model_helper(model, covariates=x.out['mr']['instrument'])
 	estimate = float(model_data['estimate'])
 	se = float(model_data['se'])
@@ -55,7 +66,7 @@ def plot_mr_sensemakr(x, var_type, benchmark_covariates=None, k=1, alpha=0.05, l
 	else:
 		ylab = "Partial R^2 of unobservables with exposure trait"
 
-	ovb_plots.ovb_contour_plot(model=model, treatment=x.out['mr']['instrument'], sensitivity_of='t-value', xlab=xlab,
+	ovb_plots.ovb_contour_plot(model=model, treatment=x.out['mr']['instrument'], sensitivity_of='t-value', t_threshold=t_thr, xlab=xlab,
 		ylab=ylab, lim=lim_x, lim_y=lim_y)
 	#ovb_plots.ovb_contour_plot(estimate=estimate, se=se, dof=dof, treatment=x.out['mr']['instrument'],
 	#							sensitivity_of='t-value', xlab=xlab, ylab=ylab, lim=lim_x, lim_y=lim_y)  #,

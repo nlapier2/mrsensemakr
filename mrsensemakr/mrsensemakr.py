@@ -39,7 +39,7 @@ class MRSensemakr:
 
 		self.out = {}
 		self.out['info'] = {'outcome': self.outcome, 'exposure': self.exposure,
-			'instrument': self.instrument, 'covariates': self.covariates}
+			'instrument': self.instrument, 'covariates': self.covariates, 'alpha': self.alpha}
 
 		# first stage
 		if self.covariates is None:
