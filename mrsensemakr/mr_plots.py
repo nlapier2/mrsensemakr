@@ -55,11 +55,11 @@ def plot_mr_sensemakr(x, var_type, benchmark_covariates=None, k=1, alpha=0.05, l
 	else:
 		ylab = "Partial R^2 of unobservables with exposure trait"
 
-	# ovb_plots.ovb_contour_plot(model=model, treatment=x.out['mr']['instrument'], sensitivity_of='t-value', xlab=xlab,
-	#   ylab=ylab, lim=lim_x, lim_y=lim_y)
-	ovb_plots.ovb_contour_plot(estimate=estimate, se=se, dof=dof, treatment=x.out['mr']['instrument'],
-								sensitivity_of='t-value', xlab=xlab, ylab=ylab, lim=lim_x, lim_y=lim_y)  #,
-								# r2yz_dx=[0.1], r2dz_x=[0.1])
+	ovb_plots.ovb_contour_plot(model=model, treatment=x.out['mr']['instrument'], sensitivity_of='t-value', xlab=xlab,
+		ylab=ylab, lim=lim_x, lim_y=lim_y)
+	#ovb_plots.ovb_contour_plot(estimate=estimate, se=se, dof=dof, treatment=x.out['mr']['instrument'],
+	#							sensitivity_of='t-value', xlab=xlab, ylab=ylab, lim=lim_x, lim_y=lim_y)  #,
+								#r2yz_dx=[0.1], r2dz_x=[0.1])
 	if benchmark_covariates is not None:
 		ovb_plots.add_bound_to_contour(bounds=bounds, treatment=x.out['mr']['instrument'])
 #
